@@ -15,9 +15,7 @@ array_walk($argv, function ($path) {
     if (!is_file($path)) {
         echo sprintf(
             "\033[31mSpecified path %s is not a file\033[0m\n",
-            $path,
-            json_last_error_msg(),
-            json_last_error()
+            $path
         );
         return;
     }
