@@ -1,11 +1,13 @@
 # json-fixer
 Accepts file paths as arguments. Each file is then checked to make sure it
 exists, is a file, and contains valid JSON; if it does, it is prettified in
-situ.
+situ. The name *fixer* is misleading as this tool does not *fix* anything, it
+simply makes JSON files pretty. The name is derived from [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer), which applies coding standards to PHP
+files.
 
-```
-json-fixer [input-file] ...
-```
+**Signiture:**
+
+`json-fixer [input-file] ...`
 
 ## Installation
 
