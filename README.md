@@ -21,7 +21,6 @@ and
 [jsonlint](https://www.npmjs.com/package/jsonlint)
 should be used.
 
-
 ## Installation
 
 Download the file…
