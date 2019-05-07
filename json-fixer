@@ -4,10 +4,9 @@
 $command_name = basename(array_shift($argv));
 
 if (count($argv) == 0) {
-    echo sprintf(
-        "%s [input-file]...\n",
-        $command_name
-    );
+    echo "json-fixer v0.1, https://github.com/garettrobson/json-fixer\n";
+    echo "Useage:\n";
+    echo sprintf("  %s [input-file]...\n", $command_name);
     return;
 }
 
