@@ -21,6 +21,43 @@ $ sudo chmod a+x json-fixer
 $ sudo mv json-fixer /usr/local/bin/json-fixer
 ```
 
+## Basic example
+
+Imagine you have a messy/packed json file that you would like to make readable.
+
+```
+{"foo":{"bar":"baz"},"qux":["quux","quuz","corge"],"grault":"https://github.com/garettrobson/json-fixer","garply":1024,"waldo":true,"fred":false,"plugh":null,"xyzzy":3.14159265359,"thud":"\\\\samba-share\\some\\directory"}
+```
+
+Simply run json-fixer passing it the files path as a parameter.
+
+```
+$ json-fixer example.json
+Fixed example.json
+```
+
+```
+$ cat example.json
+{
+    "foo": {
+        "bar": "baz"
+    },
+    "qux": [
+        "quux",
+        "quuz",
+        "corge"
+    ],
+    "grault": "https://github.com/garettrobson/json-fixer",
+    "garply": 1024,
+    "waldo": true,
+    "fred": false,
+    "plugh": null,
+    "xyzzy": 3.14159265359,
+    "thud": "\\\\samba-share\\some\\directory"
+}
+```
+
+
 ## Usage
 
 You can run the fixer on multiple files given specific paths.
@@ -36,7 +73,7 @@ This tool **will not** recurse directories. To perform such a task it is best to
 use `find` and pipe it to `xargs json-fixer`;
 
 ```
-find . -name "*.json" | xargs json-fixer 
+find . -name "*.json" | xargs json-fixer
 ```
 
 If you try and fix a file which does not contain json, or is invalid json, you
