@@ -1,7 +1,15 @@
 #!/usr/bin/php
 <?php
 
-array_shift($argv);
+$command_name = basename(array_shift($argv));
+
+if (count($argv) == 0) {
+    echo sprintf(
+        "%s [input-file]...\n",
+        $command_name
+    );
+    return;
+}
 
 array_walk($argv, function ($path) {
     if (!is_file($path)) {

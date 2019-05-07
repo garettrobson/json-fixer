@@ -1,5 +1,11 @@
 # json-fixer
-Takes in a json file, and if it's valid will reformat it.
+Accepts file paths as arguments. Each file is then checked to make sure it
+exists, is a file, and contains valid JSON; if it does, it is prettified in
+situ.
+
+```
+json-fixer [input-file] ...
+```
 
 ## Installation
 
