@@ -19,8 +19,8 @@ array_walk($argv, function ($path) {
         return;
     }
 
-    $json = file_get_contents($path);
-    $decoded = json_decode($json);
+    $json_in = file_get_contents($path);
+    $decoded = json_decode($json_in);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
         echo sprintf(
@@ -32,8 +32,13 @@ array_walk($argv, function ($path) {
         return;
     }
 
-    $json = json_encode($decoded, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-    file_put_contents($path, $json);
+    $json_out = json_encode($decoded, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+
+    if($json_in === $json_out){
+        return;
+    }
+
+    file_put_contents($path, $json_out);
 
     echo sprintf(
         "\033[32mFixed %s\033[0m\n",
